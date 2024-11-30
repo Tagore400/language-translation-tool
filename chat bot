@@ -1,0 +1,21 @@
+# Input number of rooms
+n = int(input())
+# Input the size of each group
+k = int(input())
+# Input the list of room numbers
+room_numbers = list(map(int, input().split()))
+
+# Use a dictionary to count occurrences of each room number
+room_count = {}
+
+for room in room_numbers:
+    if room in room_count:
+        room_count[room] += 1
+    else:
+        room_count[room] = 1
+
+# Find the room number that occurs only once (the Captain's room)
+for room, count in room_count.items():
+    if count == 1:
+        print(room)
+        break
